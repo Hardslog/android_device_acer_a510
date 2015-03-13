@@ -1,4 +1,4 @@
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file is the build configuration for a full Android
-# build for grouper hardware. This cleanly combines a set of
-# device-specific aspects (drivers) with a device-agnostic
-# product configuration (apps).
-#
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/zombi/config/common_tablet.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/acer/a510/device_a510.mk)
 
 # Configure as xhdpi device to prevent breaking without mdpi drawables
 PRODUCT_AAPT_CONFIG := normal mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
-# Discard inherited values and use our own instead.
-PRODUCT_NAME := full_a510
+## Device identifier. This must come after all inclusions
+PRODUCT_NAME := zombi_a510
 PRODUCT_DEVICE := a510
 PRODUCT_BRAND := Acer
 PRODUCT_MODEL := A510
-
-# Inherit from those products. Most specific first.
-$(call inherit-product, device/acer/a510/device_a510.mk)
-# This is where we'd set a backup provider if we had one
