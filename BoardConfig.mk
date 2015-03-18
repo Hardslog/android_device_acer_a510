@@ -2,7 +2,7 @@
 include device/acer/t30-common/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := picasso_m
-TARGET_OTA_ASSERT_DEVICE := picasso_m,a510_pa_cus1
+TARGET_OTA_ASSERT_DEVICE := picasso_m,a510_pa_cus1,a510
 
 # Kernel defconfig
 TARGET_KERNEL_CONFIG := zombi_picasso_m_defconfig
