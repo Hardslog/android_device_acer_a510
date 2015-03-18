@@ -12,3 +12,4 @@ TARGET_KERNEL_CONFIG := zombi_picasso_m_defconfig
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/acer/a510/prebuilt/ramdisk/fstab.acer
+TW_THEME := landscape_mdpi
