@@ -1,4 +1,4 @@
-/system		        ext4	  /dev/block/platform/sdhci-tegra.3/by-name/APP
+/system		        ext4	  /dev/lvpool/system
 /cache		        ext4	  /dev/block/platform/sdhci-tegra.3/by-name/CAC
 /data		          ext4	  /dev/block/platform/sdhci-tegra.3/by-name/UDA	length=-1081344
 /misc		          emmc	  /dev/block/platform/sdhci-tegra.3/by-name/MSC
